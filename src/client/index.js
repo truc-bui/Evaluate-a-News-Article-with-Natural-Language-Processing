@@ -1,7 +1,11 @@
-import { checkForName } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
 
-console.log(checkForName);
+function init() {
+  const form = document.getElementsByTagName('form')[0];
+  form.addEventListener('submit', handleSubmit);
 
-alert("I EXIST")
-console.log("CHANGE!!");
+  const submitButton = form.querySelector('[type=submit]');
+  submitButton.addEventListener('submit', handleSubmit);
+  submitButton.addEventListener('click', handleSubmit);
+}
+ window.onload = init;
